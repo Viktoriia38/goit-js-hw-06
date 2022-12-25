@@ -13,6 +13,7 @@
 const input = document.querySelector("#font-size-control");
 const span = document.querySelector("#text");
 const spanValue = span.textContent;
+span.style.fontSize = input.value + "px";
 
 input.addEventListener("input", function () {
   span.style.fontSize = input.value + "px";

@@ -31,16 +31,14 @@
 // }
 
 const textInput = document.querySelector("#validation-input");
-const length = textInput.getAttribute("data-length");
-console.log(length);
+const length = Number(textInput.dataset.length);
 
-textInput.addEventListener("blur", () => {
-  if (textInput.value.length < length) {
-    textInput.classList.toggle("invalid");
+textInput.addEventListener("blur", (event) => {
+  if (event.currentTarget.value.length === length) {
+    textInput.classList.add("valid");
+    textInput.classList.remove("invalid");
+    return;
   }
-  if (textInput.value.length >= length);
-  {
-    textInput.classList.toggle("valid");
-  }
+  textInput.classList.remove("valid");
+  textInput.classList.add("invalid");
 });
-console.log(textInput.value.length);

@@ -13,10 +13,10 @@ console.log(spanValue);
 console.log(nameInput);
 
 nameInput.addEventListener("input", (event) => {
-  if (nameInput > "") {
+  if (!event.currentTarget.value) {
+    document.querySelector("#name-output").textContent = "Anonymous";
+  } else {
     document.querySelector("#name-output").textContent =
       event.currentTarget.value;
-  } else if ((nameInput = "")) {
-    document.querySelector("#name-output").textContent = "Anonymous";
   }
 });
